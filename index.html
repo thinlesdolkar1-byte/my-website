@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thinles Dolkar – Chemistry, IIT Bombay</title>
+<meta name="description" content="Thinles Dolkar, Ph.D. candidate in Chemistry at IIT Bombay. Bio-inspired molecular catalysts for hydrogen and CO2 conversion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14213D; --text:#2B2F36; --muted:#5B6270; --line:#E3E6EB; --bg:#FFFFFF; --soft:#F5F7F9;
+  --accent:#0E6170; --accent-soft:#E6F1F2;
+  --serif:'Source Serif 4', Georgia, serif; --sans:Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--ink)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);text-decoration:none}
+.links{display:flex;gap:4px;flex-wrap:wrap}
+.links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;padding:8px 10px;border-radius:6px}
+.links a:hover{color:var(--ink);background:var(--soft)}
+
+/* hero */
+.hero{padding:72px 0 64px;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:180px 1fr;gap:48px;align-items:center}
+.photo{width:180px;height:220px;border-radius:10px;object-fit:cover;object-position:center 20%;box-shadow:0 1px 2px rgba(20,33,61,.08),0 8px 24px rgba(20,33,61,.08)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-family:var(--serif);font-weight:700;font-size:48px;line-height:1.08;color:var(--ink);margin:0 0 8px;letter-spacing:-.01em}
+.role{font-size:18px;color:var(--text);margin:0 0 20px}
+.role strong{color:var(--ink);font-weight:600}
+.bio{max-width:640px;margin:0 0 28px;color:var(--text);text-wrap:pretty}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;border:1px solid var(--line);color:var(--ink);background:#fff}
+.btn:hover{border-color:var(--ink);color:var(--ink)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn.primary:hover{background:#0B162B;color:#fff}
+.btn svg{width:18px;height:18px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--line)}
+.stat{padding:28px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--serif);font-size:34px;font-weight:600;color:var(--ink);line-height:1.1}
+.stat span{font-size:14px;color:var(--muted)}
+
+/* sections */
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+section.alt{background:var(--soft)}
+h2{font-family:var(--serif);font-weight:600;font-size:30px;color:var(--ink);margin:0 0 8px;text-wrap:balance}
+.lede{color:var(--muted);margin:0 0 36px;max-width:680px}
+h3{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);margin:0 0 8px;line-height:1.3}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px}
+.card .ic{width:44px;height:44px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.card .ic svg{width:24px;height:24px}
+.card p{margin:0;font-size:15px;color:var(--text)}
+
+.phd{margin-top:28px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px 28px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.phd .k{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.phd p{margin:0}
+.phd .t{font-family:var(--serif);font-size:19px;color:var(--ink);font-weight:600;max-width:640px}
+
+/* publications */
+.filter{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 28px}
+.filter button{font:inherit;font-size:14px;font-weight:500;min-height:40px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--text);cursor:pointer}
+.filter button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+ol.pubs{list-style:none;margin:0;padding:0;counter-reset:p}
+ol.pubs li{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:20px 0;border-top:1px solid var(--line)}
+ol.pubs li:first-child{border-top:0}
+ol.pubs li[hidden]{display:none}
+.yr{font-family:var(--serif);font-weight:600;color:var(--accent);font-size:17px;padding-top:1px}
+.ptitle{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);line-height:1.4;margin:0 0 6px}
+.authors{font-size:14px;color:var(--muted);margin:0 0 4px}
+.authors b{color:var(--ink);font-weight:600}
+.venue{font-size:14px;margin:0}
+.venue i{color:var(--text)}
+.tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.03em;padding:2px 8px;border-radius:4px;background:var(--accent-soft);color:var(--accent);margin-left:8px;vertical-align:1px}
+.sub{margin-top:40px}
+.sub h3{margin-bottom:12px}
+ul.plain{margin:0;padding-left:20px}
+ul.plain li{margin:6px 0}
+
+/* timeline */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{position:relative;padding:0 0 26px 26px;border-left:2px solid var(--line);margin-left:6px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--accent)}
+.tl .when{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.03em}
+.tl .what{font-weight:600;color:var(--ink);margin:2px 0}
+.tl .where{font-size:15px;color:var(--muted);margin:0}
+
+.honours{list-style:none;margin:0;padding:0}
+.honours li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line);font-size:15px}
+.honours li:first-child{border-top:0;padding-top:0}
+.honours .y{font-weight:600;color:var(--accent)}
+.honours b{color:var(--ink);font-weight:600}
+
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 48px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{font-size:14px;padding:6px 12px;border-radius:6px;background:#fff;border:1px solid var(--line);color:var(--text)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.contact .card h3{font-size:15px;font-family:var(--sans);font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.contact .card p{font-size:16px;color:var(--ink);word-break:break-word}
+
+footer{padding:32px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .cards,.contact{grid-template-columns:1fr}
+  .two,.skills{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:640px){
+  .links{display:none}
+  .hero{padding:48px 0}
+  .hero .wrap{grid-template-columns:1fr;gap:24px}
+  .photo{width:140px;height:172px}
+  h1{font-size:38px}
+  section{padding:56px 0}
+  ol.pubs li{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Thinles Dolkar</a>
+    <nav class="links" aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="cv.html">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <img class="photo" src="data:image/jpeg;base64,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" alt="Portrait of Thinles Dolkar">
+    <div>
+      <p class="eyebrow">Ph.D. Candidate · Chemistry</p>
+      <h1>Thinles Dolkar</h1>
+      <p class="role"><strong>Department of Chemistry, Indian Institute of Technology Bombay</strong><br>Bioinorganic Lab of Prof. Arnab Dutta</p>
+      <p class="bio">I design bio-inspired molecular catalysts built from earth-abundant metals (iron, cobalt and copper) for clean-energy reactions: producing and oxidising hydrogen, and converting CO<sub>2</sub> into formate using electricity or light. My work runs from mechanism, probed with in situ spectroelectrochemistry, through to working fuel-cell and electrolyzer devices.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://scholar.google.com/citations?user=wa0qKUQAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+          Google Scholar
+        </a>
+        <a class="btn" href="mailto:thinlesdolkar5@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          thinlesdolkar5@gmail.com
+        </a>
+        <a class="btn" href="cv.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+          View CV
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" style="padding:0">
+  <div class="stats" role="list">
+    <div class="stat" role="listitem"><b>10</b><span>Peer-reviewed publications</span></div>
+    <div class="stat" role="listitem"><b>1</b><span>Indian patent application</span></div>
+    <div class="stat" role="listitem"><b>AIR 93</b><span>CSIR-UGC NET, Chemical Sciences</span></div>
+    <div class="stat" role="listitem"><b>2025</b><span>Best Poster Award, ICCCU, JNCASR</span></div>
+  </div>
+</div>
+
+<section id="research" class="alt">
+  <div class="wrap">
+    <h2>Research</h2>
+    <p class="lede">Tailoring catalysts for sustainable energy conversion and CO<sub>2</sub> utilization, from molecular design to functional devices.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 5 6.5 5 9.5A5 5 0 0 1 7 12.5C7 9.5 9 7 12 3z"/></svg></div>
+        <h3>Hydrogen evolution &amp; oxidation</h3>
+        <p>Non-heme iron catalysts that both produce and oxidise H<sub>2</sub> in water, immobilised on carbon electrodes and tested in working H<sub>2</sub> fuel cells.</p>
+      </article>
+      <article class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="12" r="2"/><circle cx="19.5" cy="12" r="2"/><path d="M6.5 12H9M15 12h2.5"/></svg></div>
+        <h3>CO<sub>2</sub> to formate</h3>
+        <p>Bio-inspired iron and transition-metal catalysts for electrochemical and light-driven CO<sub>2</sub> reduction in aqueous conditions, with mechanisms resolved by in situ spectroelectrochemistry.</p>
+      </article>
+      <article class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8.66 5v10L12 22l-8.66-5V7z"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <h3>Water-splitting materials</h3>
+        <p>CoTe/NiS<sub>2</sub> heterostructures as bifunctional electrocatalysts for overall water splitting, evaluated in an electrolyzer, and heterobimetallic complexes for cooperative H<sub>2</sub> evolution.</p>
+      </article>
+    </div>
+    <div class="phd">
+      <div>
+        <p class="k">Ph.D. thesis</p>
+        <p class="t">Tailoring Catalysts for Sustainable Energy Conversion and CO<sub>2</sub> Utilization: From Molecular Design to Functional Devices</p>
+      </div>
+      <div>
+        <p class="k">Supervisor</p>
+        <p>Prof. Arnab Dutta, IIT Bombay</p>
+        <p style="color:var(--muted);font-size:15px">Jan 2021 – Dec 2026 (expected)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+    <p class="lede">Ten peer-reviewed articles, including two as first author. Full list on <a href="https://scholar.google.com/citations?user=wa0qKUQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    <div class="filter" role="group" aria-label="Filter publications">
+      <button type="button" data-f="all" aria-pressed="true">All (10)</button>
+      <button type="button" data-f="first" aria-pressed="false">First author (2)</button>
+      <button type="button" data-f="collab" aria-pressed="false">Collaborative (3)</button>
+    </div>
+    <ol class="pubs" id="pubs">
+      <li data-k="first">
+        <div class="yr">2026</div>
+        <div>
+          <p class="ptitle">A Redox-Active Iron Azo-Pyridine Complex for Aqueous H<sub>2</sub> Evolution and H<sub>2</sub> Oxidation: From Mechanism to Devices<span class="tag">First author</span></p>
+          <p class="authors"><b>Dolkar, T.</b>; Shah, N. A.; Trivedi, V.; Dastider, S. G.; Pal, M.; Kaushik, T.; Mondal, K.; Lahiri, G. K.; Dutta, A.</p>
+          <p class="venue"><i>ACS Catalysis</i> 2026, 16 (20), 19956–19971</p>
+        </div>
+      </li>
+      <li data-k="first">
+        <div class="yr">2026</div>
+        <div>
+          <p class="ptitle">Rational Construction of NiS<sub>2</sub>/CoTe Nanostructures as Bifunctional Electrocatalysts for Overall Water Splitting<span class="tag">First author</span></p>
+          <p class="authors"><b>Dolkar, T.</b>; Biswas, R.; Pal, M.; Roy, A.; Dutta, A.</p>
+          <p class="venue"><i>ACS Applied Nano Materials</i> 2026, 9 (39), 17827–17839</p>
+        </div>
+      </li>
+      <li data-k="group">
+        <div class="yr">2026</div>
+        <div>
+          <p class="ptitle">Plasmonic Gold Antenna–Copper Molecular Complex Reactor Assembly for Exclusive CO<sub>2</sub> to Formate Conversion under White-Light Irradiation</p>
+          <p class="authors">Kaushik, T.; Chowdhury, A.; Pal, M.; Dastider, S. G.; <b>Dolkar, T.</b>; Trivedi, V.; Biswas, R.; Guria, S.; Vishal, V.; Mondal, K.; Datta, A.; Dutta, A.</p>
+          <p class="venue"><i>Journal of the American Chemical Society</i> 2026, 148, 6309–6323</p>
+        </div>
+      </li>
+      <li data-k="collab">
+        <div class="yr">2026</div>
+        <div>
+          <p class="ptitle">Hydride-Bridged Heteronuclear Complexes for Hydrogen Evolution: Electrocatalytic and Theoretical Studies</p>
+          <p class="authors">Mishra, S.; Pareek, A.; <b>Dolkar, T.</b>; Bonthapally, R.; Pathak, A. K.; Dutta, A.; Ghosh, S.</p>
+          <p class="venue"><i>Inorganic Chemistry</i> 2026, 65, 18196–18208</p>
+        </div>
+      </li>
+      <li data-k="group">
+        <div class="yr">2025</div>
+        <div>
+          <p class="ptitle">pH-Modulated Activation of a Pendant Amine Leading to Rapid Electrocatalytic H<sub>2</sub> Production by a Molecular Copper Complex in Acidic Water</p>
+          <p class="authors">Shah, N. A.; <b>Dolkar, T.</b>; Karim, S.; Ishrat, J.; Das, C.; Das, S.; Sinha Roy, A.; Bhattacharyya, K.; Dutta, A.</p>
+          <p class="venue"><i>Inorganic Chemistry Frontiers</i> 2025, 12 (20), 6178–6190</p>
+        </div>
+      </li>
+      <li data-k="collab">
+        <div class="yr">2025</div>
+        <div>
+          <p class="ptitle">Heavier Chalcogenate-Bridged Manganese Carbonyl Complexes: Synthesis, Reactivity, and Electrochemical Investigation</p>
+          <p class="authors">Mishra, S.; <b>Dolkar, T.</b>; Pareek, A.; Maji, R.; Dutta, A.; Ghosh, S.</p>
+          <p class="venue"><i>Chemistry – An Asian Journal</i> 2025, 20, e202401820</p>
+        </div>
+      </li>
+      <li data-k="group">
+        <div class="yr">2024</div>
+        <div>
+          <p class="ptitle">Rational Design of Adenine-Appended Synthetic Cobalt Catalysts via Click Reaction for Electrocatalytic Hydrogen Production</p>
+          <p class="authors">Das, S.; <b>Dolkar, T.</b>; Shah, N. A.; Saha, S.; Dutta, A.</p>
+          <p class="venue"><i>International Journal of Hydrogen Energy</i> 2024, 56, 582–588</p>
+        </div>
+      </li>
+      <li data-k="group">
+        <div class="yr">2024</div>
+        <div>
+          <p class="ptitle">Noble Metal Plasmon–Molecular Catalyst Hybrids for Renewable Energy Relevant Small Molecule Activation</p>
+          <p class="authors">Kaushik, T.; Ghosh, S.; <b>Dolkar, T.</b>; Biswas, R.; Dutta, A.</p>
+          <p class="venue"><i>ACS Nanoscience Au</i> 2024, 4, 273–289</p>
+        </div>
+      </li>
+      <li data-k="collab">
+        <div class="yr">2024</div>
+        <div>
+          <p class="ptitle">Beyond S and Se: Electrocatalytic Hydrogen Production by Tellurolate-Bridged Co(III)–Mn(I) Heterodinuclear Complexes</p>
+          <p class="authors">Mishra, S.; <b>Dolkar, T.</b>; Pareek, A.; Bonthapally, R.; Maity, D. K.; Dutta, A.; Ghosh, S.</p>
+          <p class="venue"><i>Inorganic Chemistry</i> 2024, 63, 16918–16927</p>
+        </div>
+      </li>
+      <li data-k="group">
+        <div class="yr">2023</div>
+        <div>
+          <p class="ptitle">Deploying a Molecular Copper Catalyst for Efficient Degradation of Commercial and Industrial Dyes under Practical Conditions</p>
+          <p class="authors">Ali, A.; Meena, B. V.; Shah, N. A.; Kaushik, T.; <b>Dolkar, T.</b>; Ghoroi, C.; Dutta, A.</p>
+          <p class="venue"><i>Environmental Science: Water Research &amp; Technology</i> 2023, 9, 2219–2225</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="two sub">
+      <div>
+        <h3>Patent</h3>
+        <ul class="plain">
+          <li>Bio-Inspired Electrocatalytic Systems for Bidirectional Proton–Hydrogen Conversion and Fuel Cell / Electrolyzer Integration. Indian Patent Application No. 202621016756.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Manuscripts in preparation</h3>
+        <ul class="plain">
+          <li>Unveiling the Potential of a Bioinspired Non-Heme Iron Complex for Sustainable CO<sub>2</sub>-to-Formate Conversion in Aqueous Conditions. <span style="color:var(--muted)">Dolkar, T.; Dutta, A.</span></li>
+          <li>Mechanistic Insights into Photocatalytic CO<sub>2</sub>-to-Formate Conversion by Bio-Inspired Non-Heme Iron Complexes. <span style="color:var(--muted)">Dolkar, T.; Dutta, A.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="alt">
+  <div class="wrap">
+    <div class="two">
+      <div>
+        <h2>Education</h2>
+        <p class="lede">&nbsp;</p>
+        <ol class="tl">
+          <li><div class="when">2021 – 2026 (expected)</div><p class="what">Ph.D. in Chemistry</p><p class="where">Indian Institute of Technology Bombay · Supervisor: Prof. Arnab Dutta</p></li>
+          <li><div class="when">2019</div><p class="what">M.Sc. in Chemistry</p><p class="where">Indian Institute of Technology Kanpur · Thesis: Enantioselective synthesis of 1,4-dihydroquinolines, with Prof. Vinod K. Singh</p></li>
+          <li><div class="when">2018</div><p class="what">Summer Research Internship</p><p class="where">IIT Gandhinagar · With Prof. Manish Kumar, on antibiotic-resistant E. coli in surface water and microplastics in river sediment</p></li>
+          <li><div class="when">2017</div><p class="what">B.Sc. (Hons.) in Chemistry</p><p class="where">Hindu College, University of Delhi</p></li>
+        </ol>
+      </div>
+      <div>
+        <h2>Honours &amp; talks</h2>
+        <p class="lede">&nbsp;</p>
+        <ul class="honours">
+          <li><span class="y">2025</span><span><b>Best Poster Award</b>, International Conference on Carbon Capture and Utilization (ICCCU 2025), JNCASR Bengaluru</span></li>
+          <li><span class="y">2025</span><span><b>Oral presentation</b>, 9th International Conference of the Institute of Metal in Biology of Grenoble (IMBG 2025) on Fuel Synthesis, Grenoble, France</span></li>
+          <li><span class="y">2024</span><span><b>Invited talk</b>, “Bio-inspired Catalyst Design Strategy for Green Hydrogen Production”, SABIC, Kolkata</span></li>
+          <li><span class="y">2020</span><span><b>Maulana Azad National Fellowship</b> for research in Chemical Sciences</span></li>
+          <li><span class="y">2020</span><span>Qualified <b>GATE</b> 2020</span></li>
+          <li><span class="y">2019</span><span><b>CSIR-UGC NET</b> (Lectureship), All India Rank 93 of 53,390</span></li>
+          <li><span class="y">2018</span><span><b>Exceptional Summer Internship Stipend</b> (top 10), Center for Sustainable Development, IIT Gandhinagar</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills &amp; experience</h2>
+    <p class="lede">Hands-on from synthesis to device testing.</p>
+    <div class="skills">
+      <div><h3>Electrochemistry</h3><div class="chips"><span class="chip">Cyclic voltammetry</span><span class="chip">LSV</span><span class="chip">Controlled potential electrolysis</span><span class="chip">EIS</span><span class="chip">RRDE</span><span class="chip">In situ spectroelectrochemistry</span><span class="chip">Fuel cell assembly &amp; testing</span></div></div>
+      <div><h3>Characterisation</h3><div class="chips"><span class="chip">NMR</span><span class="chip">UV-Vis</span><span class="chip">FT-IR</span><span class="chip">Raman</span><span class="chip">GC &amp; GC-MS</span><span class="chip">LC-MS</span><span class="chip">CHNS analysis</span><span class="chip">Ion chromatography</span></div></div>
+      <div><h3>Synthesis</h3><div class="chips"><span class="chip">Transition-metal complexes</span><span class="chip">Hydrothermal synthesis</span><span class="chip">Microwave-assisted synthesis</span></div></div>
+      <div><h3>Software</h3><div class="chips"><span class="chip">Nova (Autolab)</span><span class="chip">OriginPro</span><span class="chip">TopSpin</span><span class="chip">ChemDraw</span><span class="chip">PyMOL</span><span class="chip">SHELXT · Olex2 · Mercury</span><span class="chip">Adobe Illustrator</span><span class="chip">Fortran</span></div></div>
+      <div><h3>Teaching</h3><p style="margin:10px 0 0">Teaching assistant for the Inorganic Chemistry Lab at IIT Bombay: ran lab sessions for 60+ B.Tech students, assisted in examinations and evaluated reports.</p></div>
+      <div><h3>Outreach</h3><p style="margin:10px 0 0">Presented a research prototype at TechConnect, IIT Bombay (2022). NSS volunteer and creative team member of the departmental magazine <i>Substance</i> at Hindu College.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="lede">I welcome conversations about collaborations, postdoctoral positions and research in catalysis for clean energy.</p>
+    <div class="contact">
+      <div class="card"><h3>Email</h3><p><a href="mailto:thinlesdolkar5@gmail.com">thinlesdolkar5@gmail.com</a></p></div>
+      <div class="card"><h3>Profiles</h3><p><a href="https://scholar.google.com/citations?user=wa0qKUQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></p></div>
+      <div class="card"><h3>Address</h3><p>Department of Chemistry<br>IIT Bombay, Powai<br>Mumbai 400076, India</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Thinles Dolkar</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('.filter button');
+  var items=document.querySelectorAll('#pubs li');
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=b.getAttribute('data-f');
+      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      items.forEach(function(li){li.hidden=!(f==='all'||li.getAttribute('data-k')===f);});
+    });
+  });
+})();
+</script>
+</body>
+</html>
